@@ -70,11 +70,11 @@ race: dep ## Run data race detector
 
 build: dep ## Build
 	mkdir -p ./bin
-	CGO_ENABLED=0 GOOS=${APPOS} GOARCH=${GOARCH} go build ${LDFLAGS} -o bin/${APPNAME} ./cmd
+	CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build ${LDFLAGS} -o bin/${APPNAME} ./cmd
 
 build-beta: dep ## Build beta
 	mkdir -p ./bin
-	CGO_ENABLED=0 GOOS=${APPOS} GOARCH=${GOARCH} go build ${LDFLAGS_BETA} -o bin/${APPNAME} ./cmd
+	CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build ${LDFLAGS_BETA} -o bin/${APPNAME} ./cmd
 
 docker-lint: ## Lint Dockerfile
 	@echo "Lint container Dockerfile"
